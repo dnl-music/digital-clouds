@@ -1,0 +1,26 @@
+{
+	"name": "digital-clouds",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"dev": "webpack-dev-server --hot --open",
+		"build": "webpack"
+	},
+	"author": "Danil Kaykov",
+	"dependencies": {
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0",
+		"immutable": "^3.8.2",
+		"react-redux": "^5.0.6",
+		"redux": "^3.7.2"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-preset-env": "^1.6.0",
+		"babel-preset-react": "^6.16.0",
+		"babel-preset-stage-2": "^6.24.1",
+		"webpack": "^3.11.0",
+		"webpack-dev-server": "^2.11.2"
+	}
+}
