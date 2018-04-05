@@ -6,7 +6,11 @@ class EmployerForm extends React.Component {
   constructor(props) {
     super(props);
   }
-  onClick() {
+  // Если заводить метод как стрелочную функцию, то можно обойтись без bind
+  onClick = (e) => {
+    // Предотвращаем стандартное поведение при отправки формы -
+    // перезагрузку страницы
+    e.preventDefault();
     if (this.refs.fullName.value !== ""
         && this.refs.position.value !== ""
         && this.refs.phone.value !== "") {
@@ -22,12 +26,22 @@ class EmployerForm extends React.Component {
     }
   }
   render() {
-    return <div>
-      <p><label>ФИО: </label><input ref="fullName" /></p>
-      <p><label>Должность: </label><input ref="position" /></p>
-      <p><label>Телефон: </label><input ref="phone" /></p>
-      <p><button onClick = {this.onClick.bind(this)}>Добавить</button></p>
-    </div>
+    // Использовать form семантически более верно 
+    // и отрабатывает не только нажатие по кнопке, но и нажатие клавиши Enter
+    return (
+      <form onSubmit={this.onClick}>
+        <label htmlFor="fullName">ФИО:</label>
+        <input id="fullName" ref="fullName" />
+        <br/>
+        <label htmlFor="position">Должность:</label>
+        <input id="position" ref="position" />
+        <br/>
+        <label htmlFor="phone">Телефон:</label>
+        <input id="phone" ref="phone" />
+        <br/>
+        <button>Добавить</button>
+      </form>
+    );
   }
 }
 
