@@ -14,7 +14,8 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: "babel-loader",
         options: {
-          presets: ["stage-2", "env", "react"]
+					// Поменял порядок включение пресетов, включилась поддержка стрелочных функций
+          presets: ["env", "stage-2", "react"]
         }
       }
 		]
